@@ -8,7 +8,6 @@ Indonesia's nickel processing plants run HPAL and RKEF technology to convert lat
 
 ```mermaid
 flowchart LR
-    SP --> RAW[RAW Tables]
     SPS --> RAW
     RAW --> DT[Dynamic Tables]
     DT --> ML[ML Functions]
