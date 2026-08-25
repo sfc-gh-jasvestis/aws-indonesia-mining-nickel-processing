@@ -8,7 +8,7 @@ USE SCHEMA APP;
 CREATE OR REPLACE NOTIFICATION INTEGRATION aws_indonesia_mining_nickel_processing_EMAIL_INT
   TYPE = EMAIL
   ENABLED = TRUE
-  ALLOWED_RECIPIENTS = ('jonathan.asvestis@snowflake.com');
+  ALLOWED_RECIPIENTS = ('<YOUR_EMAIL>');
 
 -- Alert: RECOVERY_DROP_ALERT
 CREATE OR REPLACE ALERT APP.RECOVERY_DROP_ALERT
@@ -22,7 +22,7 @@ IF (EXISTS (
 THEN
   CALL SYSTEM$SEND_EMAIL(
     'aws_indonesia_mining_nickel_processing_EMAIL_INT',
-    'jonathan.asvestis@snowflake.com',
+    '<YOUR_EMAIL>',
     '[ALERT] Nickel Processing Optimization: Nickel recovery below threshold — process review needed',
     'Nickel recovery below threshold — process review needed'
   );
@@ -41,7 +41,7 @@ IF (EXISTS (
 THEN
   CALL SYSTEM$SEND_EMAIL(
     'aws_indonesia_mining_nickel_processing_EMAIL_INT',
-    'jonathan.asvestis@snowflake.com',
+    '<YOUR_EMAIL>',
     '[ALERT] Nickel Processing Optimization: Process drift detected — operator intervention recommended',
     'Process drift detected — operator intervention recommended'
   );
