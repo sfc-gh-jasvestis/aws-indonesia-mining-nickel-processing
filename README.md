@@ -115,11 +115,10 @@ Run all scripts including AWS integration. Deploy QuickSight dashboard from `qui
 ## Business Impact
 
 Industry research and Snowflake customer outcomes:
-- **Indonesia's HPAL and RKEF plants produced 1.6Mt of nickel products in 2023** — [ESDM](https://www.esdm.go.id/)
-- **1% improvement in nickel recovery at Indonesian scale = US$200M+ additional annual revenue** — [Wood Mackenzie](https://www.woodmac.com/)
-- **AI-driven process optimization can reduce energy consumption by 8-15% in smelting operations** — [McKinsey Metals](https://www.mckinsey.com/industries/metals-and-mining/our-insights)
-- **Battery-grade nickel commands 20-30% premium over ferronickel — quality control is critical** — [Benchmark Mineral Intelligence](https://www.benchmarkminerals.com/)
-
+- **Indonesia produces 55% of world's nickel (1.8M tonnes in 2024) and banned raw ore exports to drive downstream processing** — [USGS Mineral Commodity Summaries](https://www.usgs.gov/centers/national-minerals-information-center/nickel-statistics-and-information)
+- **Indonesia's nickel processing industry attracted $15B FDI in 2020-2024 from CATL, LG, and Hyundai for EV batteries** — [BKPM Indonesia](https://www.bkpm.go.id/en/publication/press-release)
+- **HPAL (High Pressure Acid Leaching) plants require 99.8% uptime — 1 hour downtime costs $500K in lost production** — [Wood Mackenzie Mining](https://www.woodmac.com/sectors/metals-mining/)
+- **Rio Tinto uses Snowflake for mining operations analytics across 60+ sites globally** — [Snowflake Customers](https://www.snowflake.com/en/customers/all-customers/)
 
 ## Key Demo Numbers
 
