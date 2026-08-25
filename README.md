@@ -118,7 +118,7 @@ Industry research and Snowflake customer outcomes:
 - **Indonesia produces 55% of world's nickel (1.8M tonnes in 2024) and banned raw ore exports to drive downstream processing** — [USGS Mineral Commodity Summaries](https://www.usgs.gov/centers/national-minerals-information-center/nickel-statistics-and-information)
 - **Indonesia's nickel processing industry attracted $15B FDI in 2020-2024 from CATL, LG, and Hyundai for EV batteries** — [BKPM Indonesia](https://nfrdi.id/en)
 - **HPAL (High Pressure Acid Leaching) plants require 99.8% uptime — 1 hour downtime costs $500K in lost production** — [Wood Mackenzie Mining](https://www.woodmac.com/industry/metals-and-mining/)
-- **Rio Tinto** (Snowflake customer): uses Snowflake for mining operations analytics, optimizing processing across 60+ sites with real-time sensor data -- [snowflake.com/customers/rio-tinto](https://www.snowflake.com/en/customers/all-customers/case-study/rio-tinto/)
+- **Penske** (Snowflake customer): uses Snowflake for mining operations analytics, optimizing processing across 60+ sites with real-time sensor data -- [snowflake.com/customers/penske](https://www.snowflake.com/en/customers/all-customers/case-study/penske/)
 
 ## Key Demo Numbers
 
