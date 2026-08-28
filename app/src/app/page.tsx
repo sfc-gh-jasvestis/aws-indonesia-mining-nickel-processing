@@ -7,6 +7,7 @@ import { Chart } from '@/components/Chart';
 import { DataTable } from '@/components/DataTable';
 import { AskAI } from '@/components/AskAI';
 import { ActionMemo } from '@/components/ActionMemo';
+import { GeoMap } from '@/components/GeoMap';
 
 interface DemoNarrative {
   title: string;
@@ -40,7 +41,18 @@ export default function HomePage() {
         <KPICard title="Energy Cost" value="Rp 847B" status="warning" />
         <KPICard title="Kilns Active" value="24/28" status="neutral" />
       </div>
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <div className="lg:col-span-1">
+          <GeoMap
+            country="indonesia"
+            markers={[{"label": "Morowali", "value": "IMIP: 42K t NPI/mo", "color": "green", "size": "lg"}, {"label": "Halmahera", "value": "Ore: 1.2M WMT", "color": "green", "size": "lg"}, {"label": "Obi Island", "value": "Port queue: 7 days", "color": "red", "size": "md"}, {"label": "Jakarta", "value": "Trading HQ", "color": "blue", "size": "md"}, {"label": "Makassar", "value": "Logistics hub", "color": "blue", "size": "sm"}]}
+            routes={[{"from": "Halmahera", "to": "Morowali", "color": "#29B5E8"}, {"from": "Morowali", "to": "Makassar", "color": "#10B981"}]}
+            title="Geographic Overview"
+            height={280}
+          />
+        </div>
+        <div className="lg:col-span-2 grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-4 grid-cols-1">
         <Chart
           data={data?.timeseries || [{ period: 'Loading', value: 0 }]}
           type="line"
@@ -55,6 +67,8 @@ export default function HomePage() {
           yKeys={[{ key: 'count', name: '%' }]}
           title="Recovery Rate by Kiln"
         />
+      </div>
+        </div>
       </div>
       <DataTable
         columns={[
