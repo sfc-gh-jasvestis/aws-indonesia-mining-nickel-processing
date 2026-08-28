@@ -35,36 +35,36 @@ export default function HomePage() {
   const executiveCockpit = (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KPICard title="Total Output" value="Rp 2.4B" status="neutral" />
-        <KPICard title="ESG Violations" value="7" status="warning" />
-        <KPICard title="Anomalies Detected" value="3" status="danger" />
-        <KPICard title="Active Sites" value="124" status="neutral" />
+        <KPICard title="NPI Output (MTD)" value="42K tonnes" status="neutral" />
+        <KPICard title="Recovery Rate" value="89.2%" status="neutral" />
+        <KPICard title="Energy Cost" value="Rp 847B" status="warning" />
+        <KPICard title="Kilns Active" value="24/28" status="neutral" />
       </div>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <Chart
           data={data?.timeseries || [{ period: 'Loading', value: 0 }]}
           type="line"
           xKey="period"
-          yKeys={[{ key: 'value', name: 'Output' }]}
-          title="Output Trend (Weekly)"
+          yKeys={[{ key: 'value', name: 'Tonnes' }]}
+          title="NPI Production (Daily)"
         />
         <Chart
           data={data?.categories || [{ category: 'Loading', count: 0 }]}
           type="bar"
           xKey="category"
-          yKeys={[{ key: 'count', name: 'Count' }]}
-          title="ESG Violations by Site"
+          yKeys={[{ key: 'count', name: '%' }]}
+          title="Recovery Rate by Kiln"
         />
       </div>
       <DataTable
         columns={[
-          { key: 'id', header: '#' },
-          { key: 'name', header: 'Site' },
-          { key: 'status', header: 'Status' },
-          { key: 'value', header: 'Output' },
+          { key: 'id', header: 'Kiln' },
+          { key: 'name', header: 'Status' },
+          { key: 'status', header: 'Efficiency' },
+          { key: 'value', header: 'Output (T/d)' },
         ]}
         data={data?.entities || []}
-        title="Site Performance"
+        title="Kiln Performance"
       />
     </div>
   );
@@ -72,16 +72,16 @@ export default function HomePage() {
   const domainTab1 = (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <KPICard title="Efficiency" value="87%" />
-        <KPICard title="Utilization" value="72%" />
-        <KPICard title="Growth Rate" value="+8.4%" />
+        <KPICard title="Ore Grade Avg" value="1.8% Ni" />
+        <KPICard title="Slag Ratio" value="12:1" />
+        <KPICard title="Specific Energy" value="4.2 MWh/t" />
       </div>
       <Chart
         data={data?.detail || [{ x: 'Loading', y: 0 }]}
         type="area"
         xKey="x"
-        yKeys={[{ key: 'y', name: 'Index' }]}
-        title="Nickel Processing Performance Trend"
+        yKeys={[{ key: 'y', name: 'MWh' }]}
+        title="Energy Consumption by Process Stage"
         height={400}
       />
     </div>
@@ -95,16 +95,16 @@ export default function HomePage() {
           type="pie"
           xKey="label"
           yKeys={[{ key: 'value', name: 'Score' }]}
-          title="Risk Distribution"
+          title="Equipment Health Score"
         />
         <ActionMemo
-          persona={{ name: 'Indonesia Operations Lead', role: 'Director of Nickel Processing' }}
+          persona={{ name: 'Ir. Hendra Kusuma', role: 'Smelter Plant Director' }}
           context={{}}
           onGenerate={async () => ({
             subject: 'Action Required',
             body: 'AI-generated recommendation based on current data patterns and predicted trends.',
             urgency: 'HIGH',
-            actions: ['Review top esg violations findings', 'Optimize site allocation', 'Prepare quarterly nickel processing report'],
+            actions: ['Schedule RKEF Kiln-3 relining (predicted wear)', 'Optimize ore blending for current grade mix', 'Investigate Kiln-7 recovery drop (dust loss suspected)'],
           })}
         />
       </div>
@@ -116,9 +116,9 @@ export default function HomePage() {
       <AskAI
         title="Ask AI"
         sampleQuestions={[
-          'Which sites have the highest esg violations?',
-          'Show output trend for the last 30 days',
-          'What is the forecast for next quarter's output?',
+          'Which kilns have below-target recovery rates?',
+          'Show energy consumption trend vs nickel price',
+          'What is the optimal ore blending ratio for current feed?',
         ]}
         mode="both"
         onSubmit={async (question, mode) => {
@@ -178,8 +178,8 @@ export default function HomePage() {
 
   const tabs = [
     { id: 'executive-cockpit', label: 'Executive Cockpit', icon: '📊', content: executiveCockpit },
-    { id: 'domain-1', label: 'Nickel Processing Analytics', icon: '📈', content: domainTab1 },
-    { id: 'domain-2', label: 'Alerts & Actions', icon: '⚡', content: domainTab2 },
+    { id: 'domain-1', label: 'Process Optimization', icon: '📈', content: domainTab1 },
+    { id: 'domain-2', label: 'Maintenance', icon: '⚡', content: domainTab2 },
     { id: 'ask-ai', label: 'Ask AI', icon: '🤖', content: askAiTab },
     { id: 'architecture', label: 'Architecture & Data', icon: '🏗️', content: architectureTab },
   ];
