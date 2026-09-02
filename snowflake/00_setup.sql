@@ -1,16 +1,13 @@
--- ============================================================================
--- Nickel Processing Optimization
--- HPAL and RKEF process optimization for Indonesia's nickel smelters — ML.FORECAST predicts recovery rates, Dynamic Tables build real-time plant dashboards, and Cortex AI generates operator recommendations.
--- ============================================================================
-USE ROLE ACCOUNTADMIN;
-CREATE DATABASE IF NOT EXISTS NICKEL_PROCESSING;
-CREATE WAREHOUSE IF NOT EXISTS PROCESSING_WH WAREHOUSE_SIZE = 'MEDIUM' AUTO_SUSPEND = 120 AUTO_RESUME = TRUE;
-USE DATABASE NICKEL_PROCESSING;
-CREATE SCHEMA IF NOT EXISTS RAW;
-CREATE SCHEMA IF NOT EXISTS CURATED;
-CREATE SCHEMA IF NOT EXISTS ML;
-CREATE SCHEMA IF NOT EXISTS AI;
-CREATE SCHEMA IF NOT EXISTS SEARCH;
-CREATE SCHEMA IF NOT EXISTS APP;
+-- Generated from generator/demo_specs/aws-indonesia-mining-nickel-processing.json
+-- Regenerate with: python3 generator/gen_repo_docs.py aws-indonesia-mining-nickel-processing
+-- This is the schema that is actually deployed for ID_MINING_NICKEL_PROCESSING.
 
-USE WAREHOUSE PROCESSING_WH;
+-- ID_MINING_NICKEL_PROCESSING  (Nickel Processing Optimization)
+-- generated from generator/demo_specs/aws-indonesia-mining-nickel-processing.json - do not hand-edit
+CREATE DATABASE IF NOT EXISTS ID_MINING_NICKEL_PROCESSING;
+CREATE SCHEMA IF NOT EXISTS ID_MINING_NICKEL_PROCESSING.RAW;
+CREATE SCHEMA IF NOT EXISTS ID_MINING_NICKEL_PROCESSING.CURATED;
+CREATE SCHEMA IF NOT EXISTS ID_MINING_NICKEL_PROCESSING.APP;
+USE DATABASE ID_MINING_NICKEL_PROCESSING;
+
+-- 5 real regions; entity names carry their region so the two always agree
