@@ -53,6 +53,7 @@ export default function HomePage() {
         <div className="lg:col-span-1">
           <GeoMap
             country="indonesia"
+            labels={{ entity: 'Kilns', event: 'Sensor Readings', alert: 'Process Upsets' }}
             regions={data?.regions}
             markers={[{"label": "Morowali", "value": "IMIP: 42K t NPI/mo", "color": "green", "size": "lg"}, {"label": "Halmahera", "value": "Ore: 1.2M WMT", "color": "green", "size": "lg"}, {"label": "Obi Island", "value": "Port queue: 7 days", "color": "red", "size": "md"}, {"label": "Jakarta", "value": "Trading HQ", "color": "blue", "size": "md"}, {"label": "Makassar", "value": "Logistics hub", "color": "blue", "size": "sm"}]}
             routes={[{"from": "Halmahera", "to": "Morowali", "color": "#29B5E8"}, {"from": "Morowali", "to": "Makassar", "color": "#10B981"}]}
@@ -81,10 +82,15 @@ export default function HomePage() {
       </div>
       <DataTable
         columns={[
-          { key: 'id', header: 'Kiln' },
-          { key: 'name', header: 'Status' },
+          { key: 'id', header: '#' },
+          { key: 'name', header: 'Kiln' },
+          { key: 'region', header: 'Region' },
           { key: 'status', header: 'Efficiency' },
-          { key: 'value', header: 'Output (T/d)' },
+          { key: 'm1', header: 'Output (T/d)' },
+          { key: 'm2', header: 'Kilns Active' },
+          { key: 'm3', header: 'Slag Ratio' },
+          { key: 'events', header: 'Sensor Readings' },
+          { key: 'alerts', header: 'Process Upsets' },
         ]}
         data={data?.entities || []}
         title="Kiln Performance"
